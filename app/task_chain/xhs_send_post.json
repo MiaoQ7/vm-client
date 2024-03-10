@@ -1,0 +1,83 @@
+{
+  "start": {
+    "jump_to_homepage": "jump_to_homepage",
+    "task_failed": "task_failed"
+  },
+  "jump_to_homepage": {
+    "_out": [3, "task_failed"],
+    "check_login": "check_login:3",
+    "failed": "jump_to_homepage:3",
+    "task_failed": "task_failed"
+  },
+  "check_login": {
+    "_out": [3, "task_failed"],
+    "upload_video": "upload_video:2",
+    "failed": "check_login:5",
+    "task_failed": "task_failed"
+  },
+  "upload_video": {
+    "_out": [3, "task_failed"],
+    "wait_upload_video": "wait_upload_video:2",
+    "failed": "upload_video:3",
+    "task_failed": "task_failed"
+  },
+  "wait_upload_video": {
+    "_out": [10, "task_failed"],
+    "input_post_title": "input_post_title:2",
+    "failed": "wait_upload_video:5",
+    "task_failed": "task_failed"
+  },
+  "input_post_title": {
+    "_out": [3, "task_failed"],
+    "input_post_desc": "input_post_desc:2",
+    "failed": "input_post_title:3",
+    "task_failed": "task_failed"
+  },
+  "input_post_desc": {
+    "_out": [3, "task_failed"],
+    "add_location": "add_location:2",
+    "failed": "input_post_desc:3",
+    "task_failed": "task_failed"
+  },
+  "add_location": {
+    "_out": [3, "task_failed"],
+    "set_who_can_see": "set_who_can_see:2",
+    "failed": "add_location:3",
+    "task_failed": "task_failed"
+  },
+  "set_who_can_see": {
+    "_out": [3, "task_failed"],
+    "pub_time": "pub_time:2",
+    "failed": "set_who_can_see:3",
+    "task_failed": "task_failed"
+  },
+  "pub_time": {
+    "_out": [3, "task_failed"],
+    "pub": "pub:2",
+    "failed": "pub_time:3",
+    "task_failed": "task_failed"
+  },
+  "pub": {
+    "_out": [3, "task_failed"],
+    "check_pub": "check_pub",
+    "failed": "pub:3",
+    "task_failed": "task_failed"
+  },
+  "check_pub": {
+    "_out": [10, "task_failed"],
+    "task_success": "task_success",
+    "failed": "check_pub:1",
+    "task_failed": "task_failed"
+  },
+  "task_failed": {
+    "_out": [3, ""],
+    "success": "core:get_task:3",
+    "failed": "task_failed:3"
+  },
+  "task_success": {
+    "_out": [3, ""],
+    "success": "core:get_task:3",
+    "failed": "task_success:3"
+  }
+
+}

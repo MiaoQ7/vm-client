@@ -1,0 +1,162 @@
+{
+  "start": {
+    "success": "enter_creator",
+    "jump_to_homepage": "jump_to_homepage",
+    "failed": "task_failed"
+  },
+  "jump_to_homepage": {
+    "enter_creator": "enter_creator",
+    "failed": "jump_to_homepage:3",
+    "task_failed": "task_failed"
+  },
+  "enter_creator": {
+    "_out": [3, "task_failed"],
+    "upload_video": "upload_video:10",
+    "failed": "enter_creator:3",
+    "task_failed": "task_failed"
+  },
+  "upload_video": {
+    "_out": [3, "task_failed"],
+    "input_upload_video_file_path": "input_upload_video_file_path:5",
+    "failed": "upload_video:3",
+    "task_failed": "task_failed"
+  },
+  "input_upload_video_file_path": {
+    "_out": [3, "task_failed"],
+    "input_upload_video_file_name": "input_upload_video_file_name:3",
+    "failed": "input_upload_video_file_path:3",
+    "task_failed": "task_failed"
+  },
+  "input_upload_video_file_name": {
+    "_out": [3, "task_failed"],
+    "wait_upload_video": "wait_upload_video:10",
+    "failed": "input_upload_video_file_name:3",
+    "task_failed": "task_failed"
+  },
+  "wait_upload_video": {
+    "_out": [3, "task_failed"],
+    "input_post_title": "input_post_title",
+    "failed": "wait_upload_video:3",
+    "task_failed": "task_failed"
+  },
+  "input_post_title": {
+    "_out": [3, "task_failed"],
+    "input_post_desc": "input_post_desc",
+    "failed": "input_post_title:3",
+    "task_failed": "task_failed"
+  },
+  "input_post_desc": {
+    "_out": [3, "task_failed"],
+    "add_post_topic": "add_post_topic",
+    "add_event": "add_event",
+    "failed": "input_post_desc:3",
+    "task_failed": "task_failed"
+  },
+  "add_post_topic": {
+    "_out": [3, "task_failed"],
+    "desc_at_friend": "desc_at_friend",
+    "failed": "add_post_topic:3",
+    "task_failed": "task_failed"
+  },
+  "desc_at_friend": {
+    "_out": [3, "task_failed"],
+    "add_event": "add_event",
+    "failed": "desc_at_friend:3",
+    "task_failed": "task_failed"
+  },
+  "add_event": {
+    "_out": [3, "task_failed"],
+    "set_cover": "set_cover",
+    "failed": "add_event:3",
+    "task_failed": "task_failed"
+  },
+  "set_cover": {
+    "_out": [3, "task_failed"],
+    "add_chapter": "add_chapter:10",
+    "failed": "set_cover:3",
+    "task_failed": "task_failed"
+  },
+  "add_chapter": {
+    "_out": [3, "task_failed"],
+    "before_add_location_scroll_down": "before_add_location_scroll_down",
+    "failed": "add_chapter:3",
+    "task_failed": "task_failed"
+  },
+  "before_add_location_scroll_down": {
+    "_out": [3, "task_failed"],
+    "check_already_open_sync": "check_already_open_sync",
+    "failed": "before_add_location_scroll_down:3",
+    "task_failed": "task_failed"
+  },
+  "check_already_open_sync": {
+    "_out": [3, "task_failed"],
+    "add_location": "add_location",
+    "failed": "check_already_open_sync:3",
+    "task_failed": "task_failed"
+  },
+  "add_location": {
+    "_out": [3, "task_failed"],
+    "related_hot_spots": "related_hot_spots",
+    "failed": "add_location:3",
+    "task_failed": "task_failed"
+  },
+  "related_hot_spots": {
+    "_out": [3, "task_failed"],
+    "add_to_collection": "add_to_collection",
+    "failed": "related_hot_spots:3",
+    "task_failed": "task_failed"
+  },
+  "add_to_collection": {
+    "_out": [3, "task_failed"],
+    "sync_other_plat": "sync_other_plat",
+    "failed": "related_hot_spots:3",
+    "task_failed": "task_failed"
+  },
+  "sync_other_plat": {
+    "_out": [3, "task_failed"],
+    "input_other_plat_title": "input_other_plat_title",
+    "allow_save_video": "allow_save_video",
+    "failed": "sync_other_plat:3",
+    "task_failed": "task_failed"
+  },
+  "input_other_plat_title": {
+    "_out": [3, "task_failed"],
+    "allow_save_video": "allow_save_video",
+    "failed": "input_other_plat_title:3",
+    "task_failed": "task_failed"
+  },
+  "allow_save_video": {
+    "_out": [3, "task_failed"],
+    "set_who_can_see": "set_who_can_see",
+    "failed": "allow_save_video:3",
+    "task_failed": "task_failed"
+  },
+  "set_who_can_see": {
+    "_out": [3, "task_failed"],
+    "pub_time": "pub_time",
+    "failed": "set_who_can_see:3",
+    "task_failed": "task_failed"
+  },
+  "pub_time": {
+    "_out": [3, "task_failed"],
+    "pub": "pub",
+    "failed": "pub_time:3",
+    "task_failed": "task_failed"
+  },
+  "pub": {
+    "_out": [3, "task_failed"],
+    "task_success": "task_success",
+    "failed": "pub:3",
+    "task_failed": "task_failed"
+  },
+  "task_failed": {
+    "_out": [3, ""],
+    "success": "core:get_task:3",
+    "failed": "task_failed:3"
+  },
+  "task_success": {
+    "_out": [3, ""],
+    "success": "core:get_task:3",
+    "failed": "task_success:3"
+  }
+}

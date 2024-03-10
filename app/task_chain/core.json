@@ -1,0 +1,36 @@
+{
+  "start": {
+    "success": "get_task"
+  },
+  "get_task": {
+    "openBrowser": "openBrowser",
+    "logout": "logout",
+    "xhs_send_post": "xhs_send_post:start",
+    "dy_send_post": "dy_send_post:start",
+    "sph_send_post": "sph_send_post:start",
+    "dy_get_tags": "dy_get_tags:start",
+    "success": "get_task:5",
+    "failed": "get_task:5"
+  },
+  "openBrowser": {
+  },
+  "logout": {
+    "success": "feedtask",
+    "failed": "feedtask_error"
+  },
+  "feedtask": {
+    "_error": "get_task",
+    "success": "get_task:5",
+    "failed": "feedtask:5",
+    "timeout": "get_task"
+  },
+  "feedtask_error": {
+    "_error": "get_task",
+    "success": "get_task:5",
+    "failed": "feedtask_error:5",
+    "timeout": "get_task"
+  },
+  "testBrowser": {
+    "success": "testBrowser:5"
+  }
+}

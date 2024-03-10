@@ -1,0 +1,34 @@
+{
+  "start": {
+    "success": "enter_creator",
+    "jump_to_homepage": "jump_to_homepage",
+    "failed": "task_failed"
+  },
+  "jump_to_homepage": {
+    "upload_video": "upload_video:5",
+    "failed": "jump_to_homepage:3",
+    "task_failed": "task_failed"
+  },
+  "upload_video": {
+    "_out": [3, "task_failed"],
+    "check_have_rec_tag": "check_have_rec_tag:30",
+    "failed": "upload_video:3",
+    "task_failed": "task_failed"
+  },
+  "check_have_rec_tag": {
+    "_out": [6, "task_failed"],
+    "task_success": "task_success",
+    "failed": "check_have_rec_tag:30",
+    "task_failed": "task_failed"
+  },
+  "task_failed": {
+    "_out": [3, ""],
+    "success": "core:get_task:3",
+    "failed": "task_failed:3"
+  },
+  "task_success": {
+    "_out": [3, ""],
+    "success": "core:get_task:3",
+    "failed": "task_success:3"
+  }
+}

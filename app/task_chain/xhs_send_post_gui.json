@@ -1,0 +1,62 @@
+{
+  "start": {
+    "send_post": "send_post",
+    "task_failed": "task_failed"
+  },
+  "send_post": {
+    "upload_video": "upload_video",
+    "task_failed": "task_failed"
+  },
+  "upload_video": {
+    "_out": [3, ""],
+    "input_upload_video_file_path": "input_upload_video_file_path",
+    "upload_video": "upload_video",
+    "task_failed": "task_failed"
+  },
+  "input_upload_video_file_path": {
+    "input_upload_video_file_name": "input_upload_video_file_name",
+    "task_failed": "task_failed"
+  },
+  "input_upload_video_file_name": {
+    "start_upload_video": "start_upload_video",
+    "task_failed": "task_failed"
+  },
+  "start_upload_video": {
+    "wait_upload_video": "wait_upload_video",
+    "task_failed": "task_failed"
+  },
+  "wait_upload_video": {
+    "input_post_title": "input_post_title",
+    "task_failed": "task_failed"
+  },
+  "input_post_title": {
+    "input_post_desc": "input_post_desc",
+    "task_failed": "task_failed"
+  },
+  "input_post_desc": {
+    "to_send_post": "add_location",
+    "task_failed": "task_failed"
+  },
+  "add_location": {
+    "to_send_post": "to_send_post",
+    "task_failed": "task_failed"
+  },
+  "to_send_post": {
+    "check_send_post": "check_send_post",
+    "task_failed": "task_failed"
+  },
+  "check_send_post": {
+    "task_success": "task_success",
+    "task_failed": "task_failed"
+  },
+  "task_failed": {
+    "_out": [3, ""],
+    "success": "core:get_task:3",
+    "failed": "task_success:3"
+  },
+  "task_success": {
+    "_out": [3, ""],
+    "success": "core:get_task:3",
+    "failed": "task_success:3"
+  }
+}

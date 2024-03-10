@@ -1,0 +1,25 @@
+# 配置说明：
+#   1. 将.env.template复制一份保存为.env，修改相关的配置（.env是docker-compose默认配置环境变量的文件）
+#   2. 可以把deploy-app.sh当做docker-compose来用，使用 ./deploy-app.sh up -d 启动即可
+#   3. 假如存在.env.dev、.env.prod等多份配置，指定某个配置文件启动：./deploy-app.sh --env-file=.env.dev up -d
+
+version: "3"
+
+services: 
+  pycl:
+    build: .
+    container_name: ${COMPOSE_PROJECT_NAME}
+    ports: 
+      - "${SUPERVISORD_PORT}:9001"
+    volumes: 
+      - "./:/project"
+      - "./logs:/project/logs"
+      - "./vfs:/project/vfs"
+      - "/etc/localtime:/etc/localtime:ro"
+    networks: 
+      nbnet:
+        aliases: 
+          - pycl
+networks: 
+  nbnet:
+    driver: bridge

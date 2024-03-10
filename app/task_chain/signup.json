@@ -1,0 +1,93 @@
+{
+  "start": {
+    "success": "get_proxy",
+    "fetch_phone": "fetch_phone",
+    "task_failed": "task_failed"
+  },
+  "get_proxy": {
+    "_alias": "core:get_proxy",
+    "LiuGuan": "signup:get_liuguanSocks5",
+    "ROLA_API": "signup:get_rolaSocks5",
+    "ROLA": "signup:get_rolaSocks5",
+    "doveip": "signup:get_doveipSocks5",
+    "ss5api": "signup:get_ss5apiSocks5",
+    "aggregationPlatform": "signup:get_aggregationProxy",
+    "VPS": "signup:get_vps"
+  },
+  "get_proxy_": {
+    "success": "signup:fetch_phone",
+    "failed": "core:check_signup",
+    "error": "task_failed"
+  },
+  "get_liuguanSocks5": {
+    "_alias": "core:get_liuguanSocks5",
+    "success": "signup:fetch_phone",
+    "failed": "signup:get_liuguanSocks5:3"
+  },
+  "get_rolaSocks5": {
+    "_out": [30, "task_failed"],
+    "_alias": "core:get_rolaSocks5",
+    "success": "signup:fetch_phone",
+    "failed": "signup:get_rolaSocks5:3"
+  },
+  "get_doveipSocks5": {
+    "_out": [30, "task_failed"],
+    "_alias": "core:get_doveipSocks5",
+    "success": "signup:fetch_phone",
+    "failed": "signup:get_doveipSocks5:3"
+  },
+  "get_ss5apiSocks5": {
+    "_out": [30, "task_failed"],
+    "_alias": "core:get_ss5apiSocks5",
+    "success": "signup:fetch_phone",
+    "failed": "signup:get_ss5apiSocks5:3"
+  },
+  "get_aggregationProxy": {
+    "_out": [5, "task_failed"],
+    "_alias": "core:get_aggregationProxy",
+    "success": "signup:fetch_phone",
+    "failed": "signup:get_aggregationProxy:3"
+  },
+  "get_vps": {
+    "_alias": "core:get_vps",
+    "success": "signup:fetch_phone",
+    "failed": "signup:get_vps:3"
+  },
+  "fetch_phone": {
+    "success": "gen_device_info",
+    "get_proxy": "get_proxy",
+    "task_failed": "task_failed"
+  },
+  "gen_device_info": {
+    "success": "request_code"
+  },
+  "request_code": {
+    "_out": [3, "task_failed"],
+    "success": "request_register:10",
+    "failed": "request_code:3",
+    "task_failed": "task_failed",
+    "get_proxy": "get_proxy"
+  },
+  "request_resend": {
+    "_out": [3, "task_failed"],
+    "success": "request_register",
+    "resend": "request_resend:3"
+  },
+  "request_register": {
+    "_out": [3, "task_failed"],
+    "success": "task_success",
+    "failed": "request_register:3",
+    "resend": "request_resend:3",
+    "task_failed": "task_failed"
+  },
+  "task_failed": {
+    "_out": [3, ""],
+    "success": "core:check_signup:3",
+    "failed": "task_failed:3"
+  },
+  "task_success": {
+    "_out": [3, ""],
+    "success": "core:check_signup:3",
+    "failed": "task_success:3"
+  }
+}
